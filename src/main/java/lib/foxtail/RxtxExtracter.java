@@ -1,7 +1,6 @@
 package lib.foxtail;
 
 import cc.foxtail.assistant.lib.Extracter;
-import cc.foxtail.assistant.util.UrlHelper;
 
 import java.io.File;
 import java.net.URL;
@@ -15,18 +14,19 @@ public final class RxtxExtracter {
     private static String extractSerialLib() {
         if (serialTmp != null)
             return serialTmp.getAbsolutePath();
-        URL url = UrlHelper.toUrlWithPoint("lib.foxtail." + Extracter.adaptionExtraLibName("rxtxSerial-22-20081207"));
-        System.out.println(url);
-        serialTmp = Extracter.createTempDirectory("rxtxSerial-2.2-20081207");
-        return Extracter.extractLibrary(url, serialTmp, "rxtxSerial-2.2-20081207");
+        String serial = '/' + RxtxExtracter.class.getPackage().getName().replace('.', '/') + '/' + Extracter.adaptionExtraLibName("rxtxSerial-22-20081207");
+        URL url = RxtxExtracter.class.getResource(serial);
+        serialTmp = Extracter.createTempDirectory("rxtxSerial");
+        return Extracter.extractLibrary(url, serialTmp, "rxtxSerial.dll");
     }
 
     private static String extractParallelLib() {
         if (parallelTmp != null)
             return parallelTmp.getAbsolutePath();
-        URL url = UrlHelper.toUrlWithPoint("lib.foxtail." + Extracter.adaptionExtraLibName("rxtxParallel-22-20081207"));
+        String paralle = '/' + RxtxExtracter.class.getPackage().getName().replace('.', '/') + '/' + Extracter.adaptionExtraLibName("rxtxSerial-22-20081207");
+        URL url = RxtxExtracter.class.getResource(paralle);
         parallelTmp = Extracter.createTempDirectory("rxtxParallel-2.2-20081207");
-        return Extracter.extractLibrary(url, parallelTmp, "rxtxParallel-2.2-20081207");
+        return Extracter.extractLibrary(url, parallelTmp, "rxtxParallel-2.2-20081207.dll");
     }
 
     public static void main(String[] args) {
