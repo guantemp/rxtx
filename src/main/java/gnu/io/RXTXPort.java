@@ -56,6 +56,8 @@
 |   All trademarks belong to their respective owners.
 --------------------------------------------------------------------------*/
 package gnu.io;
+import gnu.lib.Extracter;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.IOException;
@@ -90,7 +92,9 @@ final public class RXTXPort extends SerialPort
 
 		if(debug ) 
 			z.reportln( "RXTXPort {}");
-		System.loadLibrary( "rxtxSerial" );
+		//update
+		//System.loadLibrary( "rxtxSerial" );
+		Extracter.load();
 		Initialize();
 	}
 

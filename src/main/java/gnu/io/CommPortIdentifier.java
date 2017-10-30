@@ -57,6 +57,8 @@
 --------------------------------------------------------------------------*/
 package gnu.io;
 
+import gnu.lib.Extracter;
+
 import  java.io.FileDescriptor;
 import java.util.HashMap;
 import  java.util.Vector;
@@ -112,6 +114,7 @@ public class CommPortIdentifier extends Object /* extends Vector? */
 			System.err.println(e + " thrown while loading " + "gnu.io.RXTXCommDriver");
 		}
 
+		/*
 		String OS;
 
 		OS = System.getProperty("os.name");
@@ -120,7 +123,9 @@ public class CommPortIdentifier extends Object /* extends Vector? */
 			if (debug)
 				System.out.println("Have not implemented native_psmisc_report_owner(PortName)); in CommPortIdentifier");
 		}
-		System.loadLibrary( "rxtxSerial" );
+		*/
+		//this update
+		Extracter.load();
 	}
 	CommPortIdentifier ( String pn, CommPort cp, int pt, CommDriver driver) 
 	{

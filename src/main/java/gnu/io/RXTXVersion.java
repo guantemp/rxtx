@@ -57,6 +57,8 @@
 --------------------------------------------------------------------------*/
 package gnu.io;
 
+import gnu.lib.Extracter;
+
 /**
 A class to keep the current version in
 */
@@ -75,8 +77,10 @@ public class RXTXVersion
 	private static String Version;
 
 	static {
-		System.loadLibrary( "rxtxSerial" );
-		Version = "RXTX-2.2pre2";
+		//System.loadLibrary( "rxtxSerial" );
+		//this.is update
+		Extracter.load();
+		Version = "RXTX-2.2-20081207 Cloudhopper Build rxtx.cloudhopper.net";
 	}
 	/**
 	*  static method to return the current version of RXTX

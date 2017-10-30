@@ -57,6 +57,8 @@
 --------------------------------------------------------------------------*/
 package gnu.io;
 
+import gnu.lib.Extracter;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.IOException;
@@ -71,7 +73,9 @@ final class LPRPort extends ParallelPort
 {
 
 	static {
-		System.loadLibrary( "rxtxParallel" );
+		//update
+		//System.loadLibrary( "rxtxParallel" );
+		Extracter.load();
 		Initialize();
 	}
 

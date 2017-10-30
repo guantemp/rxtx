@@ -63,6 +63,8 @@
 
 package gnu.io;
 
+import gnu.lib.Extracter;
+
 import java.lang.*;
 import java.util.*;
 import java.io.*;
@@ -81,7 +83,9 @@ public class RXTXCommDriver implements CommDriver
 	static
 	{
 		if(debug ) System.out.println("RXTXCommDriver {}");
+		//this is update
 		//System.loadLibrary( "rxtxSerial" );
+		Extracter.load();
 
 		/*
 		   Perform a crude check to make sure people don't mix

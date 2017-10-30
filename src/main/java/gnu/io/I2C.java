@@ -56,6 +56,8 @@
 |   All trademarks belong to their respective owners.
 --------------------------------------------------------------------------*/
 package gnu.io;
+import gnu.lib.Extracter;
+
 import java.io.*;
 import java.util.*;
 import java.lang.Math;
@@ -74,7 +76,9 @@ final class I2C  extends  I2CPort {
 
 	static 
 	{
-		System.loadLibrary( "rxtxI2C" );
+		//update
+		// System.loadLibrary( "rxtxI2C" );
+		Extracter.load();
 		Initialize();
 	}
 

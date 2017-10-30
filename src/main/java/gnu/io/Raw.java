@@ -56,6 +56,8 @@
 |   All trademarks belong to their respective owners.
 --------------------------------------------------------------------------*/
 package gnu.io;
+import gnu.lib.Extracter;
+
 import java.io.*;
 import java.util.*;
 import java.lang.Math;
@@ -71,7 +73,9 @@ final class Raw  extends  RawPort {
 
 	static 
 	{
-		System.loadLibrary( "rxtxRaw" );
+		//update
+		//System.loadLibrary( "rxtxRaw" );
+		Extracter.load();
 		Initialize();
 	}
 
